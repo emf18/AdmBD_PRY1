@@ -19,7 +19,7 @@
 
 		public function Leer()
 		{
-			return $this->consulta->Leer();
+			return $this->consulta->obtainAutomovil();
 		}
 
 		public function Eliminar($id)

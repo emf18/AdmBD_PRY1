@@ -78,7 +78,7 @@
                         $query="SELECT usuario FROM usuario where tipo=2";
                         $res = sqlsrv_query($conn,$query);
                     ?>
-                    <label for="usuVenta">Usuario:</label>                   
+                    <label for="usuVenta">Vendedor:</label>                   
                     <select class="form-control" name="Vusu" id="Vusu">
                         <?php 
                         while($row=sqlsrv_fetch_array($res)){ ?>

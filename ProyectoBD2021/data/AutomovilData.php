@@ -168,7 +168,8 @@ class AutomovilData{
         } 
     }
 
-    public function obtainAutomovilIdModelo($v){
+    public function obtainAutomovil(){
+        $idModelo = 2;
         $con = new ConectionDB(); 
         $conn = $con->conection2(); 
         if( $conn === false) {
@@ -176,11 +177,19 @@ class AutomovilData{
             die( print_r( sqlsrv_errors(), true));
         }
 
-        $sql = "SELECT * FROM automovil WHERE idAutomovil = ".$v."";  
-        $stmt = sqlsrv_query( $conn, $sql );
+        $myparams['idModelo'] = $idModelo;
+
+        $procedure_params = array(
+            array(&$myparams['idModelo'], SQLSRV_PARAM_IN)
+            );
+
+        $sql = "EXEC sp_visualizar_automovil @idModelo = ?";  
+        $stmt = sqlsrv_query( $conn, $sql, $procedure_params );
         if( $stmt === false) {
             die( print_r( sqlsrv_errors(), true) );
         }
+
+        sqlsrv_execute($stmt); 
         
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
               $veh = new Automovil($row[0], $row[1],

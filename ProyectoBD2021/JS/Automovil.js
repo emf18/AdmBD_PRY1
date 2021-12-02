@@ -203,6 +203,7 @@ function Crear() {
         accion: "leer",
       },
       function (responseText) {
+        alert(responseText);
         var htmltags = "";
         var obj = JSON.parse(responseText);
   
@@ -236,8 +237,6 @@ function Crear() {
         $("#datos").append(htmltags);
       }
     );
-  
-    Limpiar();
   }
   
   function Enviar(id, color, stock, precio, detalles) {
