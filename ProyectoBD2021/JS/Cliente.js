@@ -152,7 +152,7 @@ function Crear() {
         dataType: "html",
         
         success: function (dataresponse, statustext, response) {
-          alert(dataresponse);
+          //alert(dataresponse);
           if (dataresponse == true) {
             Swal.fire({
               position: "top",
@@ -161,7 +161,7 @@ function Crear() {
               showConfirmButton: false,
               timer: 3000,
             });
-            $("#modelo").val("");
+            $("#vendedor").val("");
           } else {
             /*Swal.fire({
               position: "top",
@@ -169,8 +169,8 @@ function Crear() {
               title: "Datos no Guardados",
               showConfirmButton: false,
               timer: 3000,
-            });
-            $("#modelo").val("");*/
+            });*/
+            $("#vendedor").val("");
           }
         },
         error: function (request, errorcode, errortext) {
@@ -180,7 +180,7 @@ function Crear() {
             title: errortext,
             timer: 3000,
           });
-          $("#modelo").val("");
+          $("#vendedor").val("");
         },
       });
     }

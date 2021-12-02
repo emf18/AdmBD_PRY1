@@ -131,13 +131,13 @@ function Crear() {
                 $("#modal1").css("display", "none");
                // Leer();
               } else {
-                Swal.fire({
+                /*Swal.fire({
                   position: "top",
                   type: "error",
                   title: "Vehiculo no modificado",
                   showConfirmButton: false,
                   timer: 3000,
-                });
+                });*/
                 $("#modal1").css("display", "none");
                 //Leer();
               }
@@ -178,13 +178,13 @@ function Crear() {
               });
               //Leer();
             } else {
-              Swal.fire({
+             /* Swal.fire({
                 position: "top",
                 type: "error",
                 title: "Vehiculo no eliminado",
                 showConfirmButton: false,
                 timer: 3000,
-              });
+              });*/
              // Leer();
             }
           }
